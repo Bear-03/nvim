@@ -22,6 +22,7 @@ function M.setup()
     vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "gruvbox-material",
         callback = gruvbox_material_custom,
+        group = GruvboxMaterialCustom,
     })
 
     vim.cmd("colorscheme gruvbox-material")
