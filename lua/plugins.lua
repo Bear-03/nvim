@@ -73,24 +73,33 @@ return packer.startup({ function(use)
     }
     use {
         "simrat39/rust-tools.nvim",
-        after = "nvim-lspconfig",
+        after = {
+            "nvim-lspconfig",
+            "nvim-lsp-installer",
+        },
         config = function()
             require("config.rust_tools").setup()
         end
     }
     use {
         "folke/lua-dev.nvim",
-        after = "nvim-lspconfig",
+        after = {
+            "nvim-lspconfig",
+            "nvim-lsp-installer",
+        },
         config = function()
             require("config.lua_dev").setup()
         end
     }
 
-    -- Nerdtree
-    use "preservim/nerdtree"
-    use "Xuyuanp/nerdtree-git-plugin"
-    use "ryanoasis/vim-devicons"
-    use "tiagofumo/vim-nerdtree-syntax-highlight"
+    -- Nvim-tree
+    use {
+        "kyazdani42/nvim-tree.lua",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("config.nvim_tree").setup()
+        end
+    }
 
     -- Treesitter (Needs a C compiler) - Better syntax highlighting
     use {

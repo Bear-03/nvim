@@ -20,7 +20,7 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, sile
 vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
 
 -- Nerdtree
-vim.api.nvim_set_keymap("n", "<Esc>", ":NERDTreeToggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Esc>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- nvim-smooth-scroll
 vim.api.nvim_set_keymap("", "<C-u>", ":call smooth_scroll#up(&scroll, 5, 2)<CR>", { noremap = true, silent = true })
