@@ -7,7 +7,8 @@ common.set_keymap_for_modes({ "", "!" }, "<Up>", "<Nop>", { noremap = true })
 common.set_keymap_for_modes({ "", "!" }, "<Down>", "<Nop>", { noremap = true })
 
 -- Save
-common.set_keymap_for_modes({ "", "!" }, "<C-s>", ":stopinsert | :w<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
 
 -- Telescope
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope live_grep<CR>", { noremap = true, silent = true })
