@@ -9,6 +9,9 @@ vim.api.nvim_set_keymap("!", "<Right>", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("!", "<Up>", "<Nop>", { noremap = true })
 vim.api.nvim_set_keymap("!", "<Down>", "<Nop>", { noremap = true })
 
+-- Save
+vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+
 -- Telescope
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 
