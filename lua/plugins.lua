@@ -122,6 +122,23 @@ return packer.startup({ function(use)
         after = "nvim-treesitter"
     }
 
+    -- Bars
+    use { -- Status bar
+        "nvim-lualine/lualine.nvim",
+        requires = { "kyazdani42/nvim-web-devicons" },
+        config = function()
+            require("config.lualine").setup()
+        end
+    }
+    use { -- Buffer bar
+        "akinsho/bufferline.nvim", -- Custom status bar and open buffer visualization
+        tag = "v2.*",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("config.bufferline").setup()
+        end
+    }
+
     -- Other
     use {
         "andweeb/presence.nvim", -- Discord RPC
@@ -137,14 +154,6 @@ return packer.startup({ function(use)
     use "nvim-telescope/telescope.nvim" -- File/String finder (Needs RipGrep and Fd-Find)
     use "tpope/vim-commentary" -- Comment shortcut
     use "Yggdroot/indentLine" -- Indent markers
-    use {
-        "akinsho/bufferline.nvim", -- Custom status bar and open buffer visualization
-        tag = "v2.*",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("config.bufferline").setup()
-        end
-    }
     use {
         "ntpeters/vim-better-whitespace", -- Highlight trailing spaces
         event = { "BufRead", "BufNewFile" },
