@@ -147,6 +147,7 @@ return packer.startup({ function(use)
     }
     use {
         "ntpeters/vim-better-whitespace", -- Highlight trailing spaces
+        event = { "BufRead", "BufNewFile" },
         config = function()
             require("config.vim_better_whitespace").setup()
         end
