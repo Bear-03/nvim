@@ -131,13 +131,20 @@ return packer.startup({ function(use)
     }
     use {
         "saecki/crates.nvim", -- Rust crates info
-        requires = { 'nvim-lua/plenary.nvim' },
+        requires = { "nvim-lua/plenary.nvim" },
         event = { "BufRead Cargo.toml" },
     }
     use "nvim-telescope/telescope.nvim" -- File/String finder (Needs RipGrep and Fd-Find)
     use "tpope/vim-commentary" -- Comment shortcut
     use "Yggdroot/indentLine" -- Indent markers
-    use "vim-airline/vim-airline" -- Custom status bar and open buffer visualization
+    use {
+        "akinsho/bufferline.nvim", -- Custom status bar and open buffer visualization
+        tag = "v2.*",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("config.bufferline").setup()
+        end
+    }
     use {
         "ntpeters/vim-better-whitespace", -- Highlight trailing spaces
         config = function()

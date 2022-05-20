@@ -19,8 +19,8 @@ vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope live_grep<CR>", { noremap = tr
 vim.api.nvim_set_keymap("n", "//", ":Commentary<CR>", { noremap = true, silent = true })
 
 -- Navigate buffer tabs
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 
 -- Nerdtree
 vim.api.nvim_set_keymap("n", "<Esc>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
