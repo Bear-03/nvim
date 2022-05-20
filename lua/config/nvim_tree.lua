@@ -15,11 +15,11 @@ function M.setup()
         filters = {
             custom = {
                 "^\\.DS_Store$",
-                "^\\.git/$",
-                "^node_modules/$",
-                "^\\.next/$",
-                "^__pycache__/$",
-                "^\\.venv/$",
+                "^\\.git$",
+                "^node_modules$",
+                "^\\.next$",
+                "^__pycache__$",
+                "^\\.venv$",
                 "^.*\\.o$",
                 "^target$",
                 "^Cargo\\.lock$",

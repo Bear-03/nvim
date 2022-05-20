@@ -1,16 +1,13 @@
--- Disable arrow keys
-vim.api.nvim_set_keymap("", "<Left>", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("", "<Right>", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("", "<Up>", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("", "<Down>", "<Nop>", { noremap = true })
+local common = require("common")
 
-vim.api.nvim_set_keymap("!", "<Left>", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("!", "<Right>", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("!", "<Up>", "<Nop>", { noremap = true })
-vim.api.nvim_set_keymap("!", "<Down>", "<Nop>", { noremap = true })
+-- Disable arrow keys
+common.set_keymap_for_modes({ "", "!" }, "<Left>", "<Nop>", { noremap = true })
+common.set_keymap_for_modes({ "", "!" }, "<Right>", "<Nop>", { noremap = true })
+common.set_keymap_for_modes({ "", "!" }, "<Up>", "<Nop>", { noremap = true })
+common.set_keymap_for_modes({ "", "!" }, "<Down>", "<Nop>", { noremap = true })
 
 -- Save
-vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+common.set_keymap_for_modes({ "", "!" }, "<C-s>", ":stopinsert | :w<CR>", { noremap = true, silent = true })
 
 -- Telescope
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope live_grep<CR>", { noremap = true, silent = true })
