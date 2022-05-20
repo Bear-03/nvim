@@ -168,6 +168,13 @@ return packer.startup({ function(use)
         end
     }
     use "terryma/vim-smooth-scroll" -- Smooth ctrl-f and ctrl-b
+    use {
+        "windwp/nvim-autopairs",
+        after = "nvim-cmp",
+        config = function()
+            require("nvim-autopairs").setup({})
+        end
+    }
 
 
     -- Let packer manage itself
