@@ -22,6 +22,15 @@ M.lsp = {
         ["rust_analyzer"] = false,
         ["sumneko_lua"] = false,
         ["taplo"] = true, -- TOML
+
+        -- Web development
+        ["cssls"] = true,
+        ["cssmodules_ls"] = true,
+        ["eslint"] = true,
+        ["emmet_ls"] = true,
+        ["html"] = true,
+        ["jsonls"] = true,
+        ["tsserver"] = true
     },
     get_capabilities = function()
         local cmp_lsp = require("cmp_nvim_lsp")

@@ -50,12 +50,7 @@ return packer.startup({ function(use)
             require("config.nvim_lsp_installer").setup()
         end
     }
-    use {
-        "neovim/nvim-lspconfig",
-        config = function()
-            require("config.nvim_lspconfig").setup()
-        end
-    }
+    use "neovim/nvim-lspconfig"
 
     -- Autocompletion
     use {
@@ -74,7 +69,6 @@ return packer.startup({ function(use)
     use {
         "simrat39/rust-tools.nvim",
         after = {
-            "nvim-lspconfig",
             "nvim-lsp-installer",
         },
         config = function()
@@ -84,7 +78,6 @@ return packer.startup({ function(use)
     use {
         "folke/lua-dev.nvim",
         after = {
-            "nvim-lspconfig",
             "nvim-lsp-installer",
         },
         config = function()
@@ -190,6 +183,6 @@ config = {
     },
     profile = {
         enable = true,
-        threshold = 1 -- the amount in ms that a plugins load time must be over for it to be included in the profile
-    }
+        threshold = 1, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+    },
 } })
