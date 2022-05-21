@@ -1,6 +1,15 @@
 -- Use CodeNewRoman Nerd Font
 
-vim.cmd("language en_US")
+vim.cmd([[
+    for s:lang in ["en", "en_US", "en_US.UTF-8", "English_US"]
+        try
+            execute "language ".s:lang
+            break
+        catch /^Vim(language):E197:/
+        " Do nothing
+        endtry
+    endfor
+]])
 
 vim.opt.number = true
 vim.opt.relativenumber = true
