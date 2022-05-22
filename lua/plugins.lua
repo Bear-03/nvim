@@ -33,6 +33,13 @@ return packer.startup({ function(use)
 
     -- Dependencies
     use "nvim-lua/plenary.nvim" -- For crates.nvim and Telescope
+    use {
+        "lewis6991/impatient.nvim", -- Speed up module loading
+        config = function()
+            require("impatient")
+        end
+    }
+    -- https://github.com/folke/trouble.nvim
 
     -- Themes
     use {
