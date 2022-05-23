@@ -153,7 +153,10 @@ return packer.startup({ function(use)
     }
     use "nvim-telescope/telescope.nvim" -- File/String finder (Needs RipGrep and Fd-Find)
     use "tpope/vim-commentary" -- Comment shortcut
-    use "Yggdroot/indentLine" -- Indent markers
+    use {
+        "Yggdroot/indentLine", -- Indent markers
+        event = { "BufRead", "BufNewFile" },
+    }
     use {
         "ntpeters/vim-better-whitespace", -- Highlight trailing spaces
         event = { "BufRead", "BufNewFile" },
@@ -175,7 +178,12 @@ return packer.startup({ function(use)
             require("nvim-autopairs").setup({})
         end
     }
-
+    use {
+        "goolord/alpha-nvim",
+        config = function()
+            require("config.alpha").setup()
+        end
+    }
 
     -- Let packer manage itself
     if PACKER_BOOTSTRAP then
