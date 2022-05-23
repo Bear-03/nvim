@@ -26,7 +26,6 @@ M.lsp = {
         -- Web development
         ["cssls"] = true,
         ["cssmodules_ls"] = true,
-        ["eslint"] = true,
         ["emmet_ls"] = true,
         ["html"] = true,
         ["jsonls"] = true,
