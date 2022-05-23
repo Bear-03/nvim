@@ -24,7 +24,7 @@ function M.setup()
     }
 
     dashboard.section.buttons.val = {
-        dashboard.button("e", "  New file", "<cmd>ene <CR>"),
+        dashboard.button("e", "  New file", "<cmd>ene <CR>", nil),
     }
 
     alpha.setup(dashboard.config)
