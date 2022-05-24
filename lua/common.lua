@@ -10,12 +10,6 @@ function M.getTableKeys(tab)
     return keyset
 end
 
-function M.set_keymap_for_modes(modes, lhs, rhs, opts)
-    for _, mode in pairs(modes) do
-        vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
-    end
-end
-
 M.lsp = {
     -- [server_name] = <set up normally via lsp>
     servers = {
